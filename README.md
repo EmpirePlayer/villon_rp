@@ -26,6 +26,9 @@
 </details>
 
 # Техническая часть
+
+<details><summary>Подключение к MySQL</summary>
 >sources
 >> core
 >>> mysql_connect - Здесь можно настроить подключение к базе данных
+</details>
