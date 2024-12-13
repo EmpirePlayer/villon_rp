@@ -6,15 +6,9 @@
 Основна для мода. Написан полностью с нуля для общего пользования.
 
 # Сделано на данный момент:
-- [X] Регистрация
+<details><summary> - [X] Регистрация </summary>
     - [X] Создание пароля
     - [X] Создание персонажа на TextDraw
+</details>
 - [X] Авторизация
 
-<details><summary>A dropdown list for markdown</summary>
-
-   1. First item must be preceeded with an empty line.
-   1. Markdown renders **perfectly**.
-   1. Extra item.
-
-</details>
