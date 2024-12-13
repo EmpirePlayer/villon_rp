@@ -10,6 +10,7 @@
   
 - [X] Создание пароля
 - [X] Создание персонажа на TextDraw
+- [X] Выбор персонажа на TextDraw (пока что, только один персонаж, и выбран он по умолчанию)
 
 <img src="https://github.com/EmpirePlayer/villon_rp/blob/main/GIF_REGI.gif" alt="РЕГИСТРАЦИЯ">
 
