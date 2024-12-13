@@ -1,1 +1,1 @@
-(https://imgur.com/lefZKy6)
+(https://imgur.com/lefZKy6.png)
