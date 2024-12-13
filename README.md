@@ -2,7 +2,7 @@
   <img src="https://github.com/EmpirePlayer/villon_rp/blob/main/img/VILLON_LOGO.png">
 </h1>
 
-[![Link to Mastodon profile](https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge)](https://github.com/EmpirePlayer/villon_rp)
+[![Link to Mastodon profile](https://img.shields.io/badge/Version-0.0.1-blue?style=for-the-badge)](https://github.com/EmpirePlayer/villon_rp)
 [![Link to Mastodon profile](https://img.shields.io/badge/Language-Pawn-blue?style=for-the-badge)](https://github.com/EmpirePlayer/villon_rp)
 [![Link to Mastodon profile](https://img.shields.io/badge/Saves-MySQL-blue?style=for-the-badge)](https://github.com/EmpirePlayer/villon_rp)
 
