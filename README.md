@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://github.com/EmpirePlayer/villon_rp/blob/main/VILLON_LOGO.png">
+  <img src="https://github.com/EmpirePlayer/villon_rp/blob/main/img/VILLON_LOGO.png">
 </h1>
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Villon+Role+Play" alt="Typing SVG" /></a>
 
@@ -12,7 +12,7 @@
 - [X] Создание персонажа на TextDraw
 - [X] Выбор персонажа на TextDraw (пока что, только один персонаж, и выбран он по умолчанию)
 
-<img src="https://github.com/EmpirePlayer/villon_rp/blob/main/GIF_REGI.gif" alt="РЕГИСТРАЦИЯ">
+<img src="https://github.com/EmpirePlayer/villon_rp/blob/main/img/GIF_REGI.gif" alt="РЕГИСТРАЦИЯ">
 
 </details>
 
