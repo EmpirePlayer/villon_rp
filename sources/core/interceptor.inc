@@ -1,6 +1,6 @@
-// Перехват OnGameModeInit
+// РџРµСЂРµС…РІР°С‚ OnGameModeInit
 public OnGameModeInit() {
-    MySQL_Connect_OnGameModeInit(); // Перехват в sources/core/mysql_connect.inc
+    MySQL_Connect_OnGameModeInit(); // РџРµСЂРµС…РІР°С‚ РІ sources/core/mysql_connect.inc
 
     TextDraw_OnGameModeInit();
 

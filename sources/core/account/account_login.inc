@@ -8,19 +8,19 @@ stock OnPlayerLogin(playerid) {
 }
 
 dialog Login(playerid) {
-    Create: <""#C_B"Авторизация | "#C_W"Ввод пароля"> {
+    Create: <""#C_B"РђРІС‚РѕСЂРёР·Р°С†РёСЏ | "#C_W"Р’РІРѕРґ РїР°СЂРѕР»СЏ"> {
         ResponseRight: {
             PlayerClearChat(playerid);
             Kick(playerid);
 
-            SendClientMessage(playerid, 0xF5DEB3FF, !"До встречи, мы надеемся увидеть вас вновь на нашем сервере");
+            SendClientMessage(playerid, 0xF5DEB3FF, !"Р”Рѕ РІСЃС‚СЂРµС‡Рё, РјС‹ РЅР°РґРµРµРјСЃСЏ СѓРІРёРґРµС‚СЊ РІР°СЃ РІРЅРѕРІСЊ РЅР° РЅР°С€РµРј СЃРµСЂРІРµСЂРµ");
             return DIALOG_CLOSE;
         }
 
         Input:<"\
-            "#C_W"Приветствуем вас на нашем сервере!\n\n\
-            Логин с таким названием уже зарегистрирован\n\
-            Введите пароль от аккаунта в поле ниже::\
+            "#C_W"РџСЂРёРІРµС‚СЃС‚РІСѓРµРј РІР°СЃ РЅР° РЅР°С€РµРј СЃРµСЂРІРµСЂРµ!\n\n\
+            Р›РѕРіРёРЅ СЃ С‚Р°РєРёРј РЅР°Р·РІР°РЅРёРµРј СѓР¶Рµ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅ\n\
+            Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ РѕС‚ Р°РєРєР°СѓРЅС‚Р° РІ РїРѕР»Рµ РЅРёР¶Рµ::\
         "> {
             new password[MAX_PASSWORD_LENGHT + 1];
             Dialog_Text(playerid, password);
@@ -28,7 +28,7 @@ dialog Login(playerid) {
             if(!textlen(password, MIN_PASSWORD_LENGHT, MAX_PASSWORD_LENGHT)) {
                 PlayerClearChat(playerid);
 
-                SendErrorMessage(playerid, "Максимальная {33aa33}20{afafaf}, минимальная {33aa33}6{afafaf} символов длины пароля");
+                SendErrorMessage(playerid, "РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ {33aa33}20{afafaf}, РјРёРЅРёРјР°Р»СЊРЅР°СЏ {33aa33}6{afafaf} СЃРёРјРІРѕР»РѕРІ РґР»РёРЅС‹ РїР°СЂРѕР»СЏ");
                 return DIALOG_REOPEN;
             }
 
@@ -41,14 +41,14 @@ dialog Login(playerid) {
                     PlayerClearChat(playerid);
                     Kick(playerid);
 
-                    SendClientMessage(playerid, 0xD8A903FF, !"Вы превысили допустимое число попыток входа в Аккаунт. Для выхода используйте (/q)uit");
+                    SendClientMessage(playerid, 0xD8A903FF, !"Р’С‹ РїСЂРµРІС‹СЃРёР»Рё РґРѕРїСѓСЃС‚РёРјРѕРµ С‡РёСЃР»Рѕ РїРѕРїС‹С‚РѕРє РІС…РѕРґР° РІ РђРєРєР°СѓРЅС‚. Р”Р»СЏ РІС‹С…РѕРґР° РёСЃРїРѕР»СЊР·СѓР№С‚Рµ (/q)uit");
                     return DIALOG_CLOSE;
                 }
 
                 new str[70];
                 format(
                     str, sizeof(str),
-                    "Вы ввели неправильный пароль. Осталось {FF8282}%d{afafaf} попыток",
+                    "Р’С‹ РІРІРµР»Рё РЅРµРїСЂР°РІРёР»СЊРЅС‹Р№ РїР°СЂРѕР»СЊ. РћСЃС‚Р°Р»РѕСЃСЊ {FF8282}%d{afafaf} РїРѕРїС‹С‚РѕРє",
                     temp_info[playerid][tLoginAttemps]
                 );
                 SendClientMessage(playerid, COLOR_GREY, str);
@@ -84,5 +84,5 @@ dialog Login(playerid) {
             );
         }
     }
-    Button:<"Войти", "X">;
+    Button:<"Р’РѕР№С‚Рё", "X">;
 }

@@ -19,9 +19,9 @@
 #define 	    RELEASED(%0)                    (((newkeys & (%0)) != (%0)) && ((oldkeys & (%0)) == (%0)))
 
 #define 	    SendErrorMessage(%0,%1)			SendClientMessage(%0, COLOR_GREY, !""%1)
-#define 	    SendInfoMessage(%0,%1)			SendClientMessage(%0, COLOR_WEAT, !"[Информация]"C_W" "%1)
-#define 	    SendSuccesMessage(%0,%1)		SendClientMessage(%0, COLOR_LGR, !"[Успешно]"C_W" "%1)
-#define 	    SendServerMessage(%0,%1)		SendClientMessage(%0, COLOR_SERVER, !"[Сервер]"C_W" "%1)
+#define 	    SendInfoMessage(%0,%1)			SendClientMessage(%0, COLOR_WEAT, !"[РРЅС„РѕСЂРјР°С†РёСЏ]"C_W" "%1)
+#define 	    SendSuccesMessage(%0,%1)		SendClientMessage(%0, COLOR_LGR, !"[РЈСЃРїРµС€РЅРѕ]"C_W" "%1)
+#define 	    SendServerMessage(%0,%1)		SendClientMessage(%0, COLOR_SERVER, !"[РЎРµСЂРІРµСЂ]"C_W" "%1)
 
 #define 	    PlayerInvalidCommand(%0)		SendClientMessage(%0, COLOR_WHITE, !"SERVER: Unknown command.")
 

@@ -6,8 +6,8 @@ public: OnPlayerLoadingCharacter(playerid) {
         SetPlayerLogged(playerid, false);
         temp_info[playerid][tRequest] = true;
 
-        printf(">> !! ОШИБКА СОЗДАНИЯ ПЕРСОНАЖА: ПЕРСОНАЖ %s НЕ НАЙДЕН! [MYSQL_ERROR_REGISTRATION_PLAYER_CHARACTER]", player_info[playerid][p_Name]);
-        SendErrorMessage(playerid, "Произошла ошибка [MYSQL_ERROR_REGISTRATION_PLAYER_CHARACTER]. Напишите проблему в технический раздел на форуме, приложив данную ошибку");
+        printf(">> !! РћРЁРР‘РљРђ РЎРћР—Р”РђРќРРЇ РџР•Р РЎРћРќРђР–Рђ: РџР•Р РЎРћРќРђР– %s РќР• РќРђР™Р”Р•Рќ! [MYSQL_ERROR_REGISTRATION_PLAYER_CHARACTER]", player_info[playerid][p_Name]);
+        SendErrorMessage(playerid, "РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР° [MYSQL_ERROR_REGISTRATION_PLAYER_CHARACTER]. РќР°РїРёС€РёС‚Рµ РїСЂРѕР±Р»РµРјСѓ РІ С‚РµС…РЅРёС‡РµСЃРєРёР№ СЂР°Р·РґРµР» РЅР° С„РѕСЂСѓРјРµ, РїСЂРёР»РѕР¶РёРІ РґР°РЅРЅСѓСЋ РѕС€РёР±РєСѓ");
         Kick(playerid);
         return 1;
     }
@@ -82,7 +82,7 @@ public: OnPlayerLoadingCharacter(playerid) {
     cache_get_value_name(0, !"LastDateUnix", temp_date, sizeof(temp_date));
     format(
         str, sizeof(str),
-        "Последний раз вы заходили на данного персонажа: %s",
+        "РџРѕСЃР»РµРґРЅРёР№ СЂР°Р· РІС‹ Р·Р°С…РѕРґРёР»Рё РЅР° РґР°РЅРЅРѕРіРѕ РїРµСЂСЃРѕРЅР°Р¶Р°: %s",
         temp_date
     );
     SendClientMessage(playerid, COLOR_LGR, str);

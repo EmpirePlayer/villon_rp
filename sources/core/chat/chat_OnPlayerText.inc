@@ -9,7 +9,7 @@ stock chat_OnPlayerText(playerid, text[]) {
 	}
 
     if(!textlen(text, 1, 127)) {
-        SendErrorMessage(playerid, "Слишком большой текст");
+        SendErrorMessage(playerid, "РЎР»РёС€РєРѕРј Р±РѕР»СЊС€РѕР№ С‚РµРєСЃС‚");
         return 0;
     }
 

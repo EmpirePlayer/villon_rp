@@ -30,7 +30,7 @@ enum {
 
 new 
     Iterator:ITER_pLogged<MAX_PLAYERS>,
-    bool:pLogged[MAX_PLAYERS char]  = {false, ...} /* Ïðîâåðêà íà àâòîðèçàöèþ */
+    bool:pLogged[MAX_PLAYERS char]  = {false, ...} /* Проверка на авторизацию */
 ;
 
 #include			"..\\sources\\utils\\utils"
@@ -54,6 +54,6 @@ main(){
 	print(!" ");
 
 	#if DEBUG_MODE
-		print(!">> DEBUG_MODE ÂÊËÞ×ÅÍ");
+		print(!">> DEBUG_MODE ВКЛЮЧЕН");
 	#endif
 }

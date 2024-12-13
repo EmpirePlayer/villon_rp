@@ -2,6 +2,6 @@
 #include "textdraw_character_select"
 
 stock TextDraw_OnGameModeInit() {
-    SkinSelect_TD(); // Перехват в textdraw//textdraw_skin_select
+    SkinSelect_TD(); // РџРµСЂРµС…РІР°С‚ РІ textdraw//textdraw_skin_select
     CharacterSelect_TD();
 }

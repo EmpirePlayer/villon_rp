@@ -30,7 +30,7 @@ stock PlayerLogAdd(const playerid, const E_LOG_TYPE: type, const text[], const v
     mysql_tquery(dbHandle, query);
 
     printf(
-        ">> [%d ms] Добавлен LOG %d: %s от LOGIN: %s[id_acc:%d], CHARACTER: %s на игрока id_acc:%d, id_character:%d", 
+        ">> [%d ms] Р”РѕР±Р°РІР»РµРЅ LOG %d: %s РѕС‚ LOGIN: %s[id_acc:%d], CHARACTER: %s РЅР° РёРіСЂРѕРєР° id_acc:%d, id_character:%d", 
         GetTickCount() - tick_count, 
         _:type, 
         text, 

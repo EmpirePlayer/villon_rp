@@ -27,8 +27,8 @@ public: OnPlayerSelectCharacter(playerid) {
     cache_get_row_count(rows);
 
     if(!rows) {
-        printf(">> !! Œÿ»¡ ¿ ¬€¡Œ–¿ œ≈–—ŒÕ¿∆¿: œ≈–—ŒÕ¿∆ %s Õ≈ Õ¿…ƒ≈Õ! [MYSQL_ERROR_SELECT_PLAYER_CHARACTER]", player_info[playerid][p_Name]);
-        SendErrorMessage(playerid, "œÓËÁÓ¯Î‡ Ó¯Ë·Í‡ [MYSQL_ERROR_SELECT_PLAYER_CHARACTER]. Õ‡ÔË¯ËÚÂ ÔÓ·ÎÂÏÛ ‚ ÚÂıÌË˜ÂÒÍËÈ ‡Á‰ÂÎ Ì‡ ÙÓÛÏÂ, ÔËÎÓÊË‚ ‰‡ÌÌÛ˛ Ó¯Ë·ÍÛ");
+        printf(">> !! –û–®–ò–ë–ö–ê –í–´–ë–û–†–ê –ü–ï–†–°–û–ù–ê–ñ–ê: –ü–ï–†–°–û–ù–ê–ñ %s –ù–ï –ù–ê–ô–î–ï–ù! [MYSQL_ERROR_SELECT_PLAYER_CHARACTER]", player_info[playerid][p_Name]);
+        SendErrorMessage(playerid, "–ü—Ä–æ–∏–∑–æ—à–ª–∞ –æ—à–∏–±–∫–∞ [MYSQL_ERROR_SELECT_PLAYER_CHARACTER]. –ù–∞–ø–∏—à–∏—Ç–µ –ø—Ä–æ–±–ª–µ–º—É –≤ —Ç–µ—Ö–Ω–∏—á–µ—Å–∫–∏–π —Ä–∞–∑–¥–µ–ª –Ω–∞ —Ñ–æ—Ä—É–º–µ, –ø—Ä–∏–ª–æ–∂–∏–≤ –¥–∞–Ω–Ω—É—é –æ—à–∏–±–∫—É");
         Kick(playerid);
         return 1;
     }
@@ -48,8 +48,8 @@ public: OnPlayerSelectCharacter(playerid) {
 
     for(new i = 0; i < rows; i++) {
         if(i > MAX_PLAYER_CHARACTER_AMOUNT - 1) {
-            printf(">> ” ÎÓ„ËÌ‡ %s [user_id:%d] ·ÓÎ¸¯Â "#MAX_PLAYER_CHARACTER_AMOUNT" ÔÂÒÓÌ‡ÊÂÈ....", account_info[playerid][account_Login], account_info[playerid][account_ID]);
-            SendErrorMessage(playerid, "” ‚‡Ò ·ÓÎ¸¯Â "#MAX_PLAYER_CHARACTER_AMOUNT" ÔÂÒÓÌ‡ÊÂÈ. ¡˚ÎË Á‡„ÛÊÂÌ˚ ÔÂ‚˚Â "#MAX_PLAYER_CHARACTER_AMOUNT". ¬˚ ÏÓÊÂÚÂ Ì‡ÔËÒ‡Ú¸ ‡‰ÏËÌËÒÚ‡ˆËË Ì‡Ò˜ÂÚ ˝ÚÓÈ ÔÓ·ÎÂÏ˚, Ë Û‰‡ÎËÚ¸ ÌÂÌÛÊÌ˚ı ÔÂÒÓÌ‡ÊÂÈ, ÂÒÎË ˝ÚÓ ÌÂÓ·ıÓ‰ËÏÓ");
+            printf(">> –£ –ª–æ–≥–∏–Ω–∞ %s [user_id:%d] –±–æ–ª—å—à–µ "#MAX_PLAYER_CHARACTER_AMOUNT" –ø–µ—Ä—Å–æ–Ω–∞–∂–µ–π....", account_info[playerid][account_Login], account_info[playerid][account_ID]);
+            SendErrorMessage(playerid, "–£ –≤–∞—Å –±–æ–ª—å—à–µ "#MAX_PLAYER_CHARACTER_AMOUNT" –ø–µ—Ä—Å–æ–Ω–∞–∂–µ–π. –ë—ã–ª–∏ –∑–∞–≥—Ä—É–∂–µ–Ω—ã –ø–µ—Ä–≤—ã–µ "#MAX_PLAYER_CHARACTER_AMOUNT". –í—ã –º–æ–∂–µ—Ç–µ –Ω–∞–ø–∏—Å–∞—Ç—å –∞–¥–º–∏–Ω–∏—Å—Ç—Ä–∞—Ü–∏–∏ –Ω–∞—Å—á–µ—Ç —ç—Ç–æ–π –ø—Ä–æ–±–ª–µ–º—ã, –∏ —É–¥–∞–ª–∏—Ç—å –Ω–µ–Ω—É–∂–Ω—ã—Ö –ø–µ—Ä—Å–æ–Ω–∞–∂–µ–π, –µ—Å–ª–∏ —ç—Ç–æ –Ω–µ–æ–±—Ö–æ–¥–∏–º–æ");
             break;
         }
 
@@ -64,24 +64,24 @@ public: OnPlayerSelectCharacter(playerid) {
 
         pLoadingsID[playerid][i] = temp_ID;
 
-        printf(">> %s Õ‡È‰ÂÌ ÔÂÒÓÌ‡Ê ID: %d [%d]", temp_name, pLoadingsID[playerid][i], i);
+        printf(">> %s –ù–∞–π–¥–µ–Ω –ø–µ—Ä—Å–æ–Ω–∞–∂ ID: %d [%d]", temp_name, pLoadingsID[playerid][i], i);
 
         pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG][i] = 
-        CreatePlayerTextDraw            (playerid, 147.0, 201.0 + (i * CHARACTER_SPACE_Y_PTD), !"LD_SPAC:white"); // ÔÛÒÚÓ
+        CreatePlayerTextDraw            (playerid, 147.0, 201.0 + (i * CHARACTER_SPACE_Y_PTD), !"LD_SPAC:white"); // –ø—É—Å—Ç–æ
         PlayerTextDrawTextSize          (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG][i], 69.0, 24.0);
         PlayerTextDrawColor             (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG][i], 255);
         PlayerTextDrawFont              (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG][i], 4);
         PlayerTextDrawShow              (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG][i]);
 
         pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG_1][i] = 
-        CreatePlayerTextDraw            (playerid, 148.0, 203.0 + (i * CHARACTER_SPACE_Y_PTD), !"LD_SPAC:white"); // ÔÛÒÚÓ
+        CreatePlayerTextDraw            (playerid, 148.0, 203.0 + (i * CHARACTER_SPACE_Y_PTD), !"LD_SPAC:white"); // –ø—É—Å—Ç–æ
         PlayerTextDrawTextSize          (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG_1][i], 67.0, 20.0);
         PlayerTextDrawColor             (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG_1][i], (i == 0) ? (COLOR_DIMGRAY) : (-1061109505));
         PlayerTextDrawFont              (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG_1][i], 4);
         PlayerTextDrawShow              (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG_1][i]);
 
         pCharactersPTD[playerid][CHARACTER_SELECT_PTD_NAME_1][i] = 
-        CreatePlayerTextDraw            (playerid, 180.0, 207.0 + (i * CHARACTER_SPACE_Y_PTD), temp_name); // ÔÛÒÚÓ
+        CreatePlayerTextDraw            (playerid, 180.0, 207.0 + (i * CHARACTER_SPACE_Y_PTD), temp_name); // –ø—É—Å—Ç–æ
         PlayerTextDrawLetterSize        (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_NAME_1][i], 0.1, 1.2);
         PlayerTextDrawTextSize          (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_NAME_1][i], 9.0, 68.0);
         PlayerTextDrawAlignment         (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_NAME_1][i], 2);
@@ -93,21 +93,21 @@ public: OnPlayerSelectCharacter(playerid) {
 
     if(rows < MAX_PLAYER_CHARACTER_AMOUNT) {
         pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG][rows] = 
-        CreatePlayerTextDraw            (playerid, 147.0, 201.0 + (rows * CHARACTER_SPACE_Y_PTD), !"LD_SPAC:white"); // ÔÛÒÚÓ
+        CreatePlayerTextDraw            (playerid, 147.0, 201.0 + (rows * CHARACTER_SPACE_Y_PTD), !"LD_SPAC:white"); // –ø—É—Å—Ç–æ
         PlayerTextDrawTextSize          (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG][rows], 69.0, 24.0);
         PlayerTextDrawColor             (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG][rows], 255);
         PlayerTextDrawFont              (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG][rows], 4);
         PlayerTextDrawShow              (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG][rows]);
 
         pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG_1][rows] = 
-        CreatePlayerTextDraw            (playerid, 148.0, 203.0 + (rows * CHARACTER_SPACE_Y_PTD), !"LD_SPAC:white"); // ÔÛÒÚÓ
+        CreatePlayerTextDraw            (playerid, 148.0, 203.0 + (rows * CHARACTER_SPACE_Y_PTD), !"LD_SPAC:white"); // –ø—É—Å—Ç–æ
         PlayerTextDrawTextSize          (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG_1][rows], 67.0, 20.0);
         PlayerTextDrawColor             (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG_1][rows], 3368703);
         PlayerTextDrawFont              (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG_1][rows], 4);
         PlayerTextDrawShow              (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_BG_1][rows]);
 
         pCharactersPTD[playerid][CHARACTER_SELECT_PTD_NAME_1][rows] = 
-        CreatePlayerTextDraw            (playerid, 180.0, 207.0 + (rows * CHARACTER_SPACE_Y_PTD), !"ÕŒ¬€…_œ≈–—ŒÕ¿∆"); // ÔÛÒÚÓ
+        CreatePlayerTextDraw            (playerid, 180.0, 207.0 + (rows * CHARACTER_SPACE_Y_PTD), !"–ù–û–í–´–ô_–ü–ï–†–°–û–ù–ê–ñ"); // –ø—É—Å—Ç–æ
         PlayerTextDrawLetterSize        (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_NAME_1][rows], 0.1, 1.2);
         PlayerTextDrawTextSize          (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_NAME_1][rows], 9.0, 68.0);
         PlayerTextDrawAlignment         (playerid, pCharactersPTD[playerid][CHARACTER_SELECT_PTD_NAME_1][rows], 2);
@@ -122,7 +122,7 @@ public: OnPlayerSelectCharacter(playerid) {
     }
 
     pCharacterSelectPTD[playerid][CHARACTER_SELECT_PTD_NAME] = 
-    CreatePlayerTextDraw        (playerid, 214.0, 184.0, account_info[playerid][account_Login]); // ÔÛÒÚÓ
+    CreatePlayerTextDraw        (playerid, 214.0, 184.0, account_info[playerid][account_Login]); // –ø—É—Å—Ç–æ
     PlayerTextDrawLetterSize    (playerid, pCharacterSelectPTD[playerid][CHARACTER_SELECT_PTD_NAME], 0.1, 0.8);
     PlayerTextDrawAlignment     (playerid, pCharacterSelectPTD[playerid][CHARACTER_SELECT_PTD_NAME], 3);
     PlayerTextDrawColor         (playerid, pCharacterSelectPTD[playerid][CHARACTER_SELECT_PTD_NAME], -1061109505);
@@ -138,11 +138,11 @@ public: OnPlayerSelectCharacter(playerid) {
         str, sizeof(str),
         "%d_%s",
         hour,
-        PluralToText(hour, "◊¿—", "◊¿—¿", "◊¿—Œ¬")
+        PluralToText(hour, "–ß–ê–°", "–ß–ê–°–ê", "–ß–ê–°–û–í")
     );
 
     pCharacterSelectPTD[playerid][CHARACTER_SELECT_PTD_HOURS] = 
-    CreatePlayerTextDraw        (playerid, 214.0, 192.0, str); // ÔÛÒÚÓ
+    CreatePlayerTextDraw        (playerid, 214.0, 192.0, str); // –ø—É—Å—Ç–æ
     PlayerTextDrawLetterSize    (playerid, pCharacterSelectPTD[playerid][CHARACTER_SELECT_PTD_HOURS], 0.1, 0.6);
     PlayerTextDrawAlignment     (playerid, pCharacterSelectPTD[playerid][CHARACTER_SELECT_PTD_HOURS], 3);
     PlayerTextDrawColor         (playerid, pCharacterSelectPTD[playerid][CHARACTER_SELECT_PTD_HOURS], -1061109505);

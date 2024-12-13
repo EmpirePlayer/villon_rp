@@ -2,7 +2,7 @@
 #define SKIN_SELECT_SPACE_SLOT_Y    32
 
 #define MAX_SKIN_NATIONAL           4     
-#define MAX_SKIN_ON_PAGE			4 			/* Сколько скинов будет на одной странице */        
+#define MAX_SKIN_ON_PAGE			4 			/* РЎРєРѕР»СЊРєРѕ СЃРєРёРЅРѕРІ Р±СѓРґРµС‚ РЅР° РѕРґРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ */        
 
 new 
     pVar__AntiFlood_Skin[] = !"pVar__AntiFlood_Skin",
@@ -11,30 +11,30 @@ new
     pVar__SelectSkin_Page[] = !"pVar__SelectSkin_Page",
     pVar__SelectSkin_MaxPage[] = !"pVar__SelectSkin_MaxPage",
     pTimerClearAnims[MAX_PLAYERS] = {INVALID_PLAYER_TIMER_ID, ...},
-    pObjectsPlayerSelectSkin[MAX_PLAYERS][93] /* Интьер выбора скина */
+    pObjectsPlayerSelectSkin[MAX_PLAYERS][93] /* РРЅС‚СЊРµСЂ РІС‹Р±РѕСЂР° СЃРєРёРЅР° */
 ; 
 
 new const
     gRegSkins[MAX_SKIN_NATIONAL][2][10] = {
-        // Европеоедная
+        // Р•РІСЂРѕРїРµРѕРµРґРЅР°СЏ
         {
-            {10, 38, 55, 90, 91, 93, 152, 192}, // Женские
-            {15, 20, 23, 29, 60, 72, 96, 101, 170, 206} // Мужские
+            {10, 38, 55, 90, 91, 93, 152, 192}, // Р–РµРЅСЃРєРёРµ
+            {15, 20, 23, 29, 60, 72, 96, 101, 170, 206} // РњСѓР¶СЃРєРёРµ
         }, 
-        //Афро Американец
+        //РђС„СЂРѕ РђРјРµСЂРёРєР°РЅРµС†
         {
-            {9, 13, 256}, // Женские
-            {4, 7, 14, 21, 22} // Мужские
+            {9, 13, 256}, // Р–РµРЅСЃРєРёРµ
+            {4, 7, 14, 21, 22} // РњСѓР¶СЃРєРёРµ
         },
-        //Латинос
+        //Р›Р°С‚РёРЅРѕСЃ
         {
-            {12, 40, 190, 214}, // Женские
-            {30, 47, 48, 184, 292, 44} // Мужские
+            {12, 40, 190, 214}, // Р–РµРЅСЃРєРёРµ
+            {30, 47, 48, 184, 292, 44} // РњСѓР¶СЃРєРёРµ
         },
-        //Азиат
+        //РђР·РёР°С‚
         {
-            {169, 224, 263}, // Женские
-            {49, 58, 119, 180, 185, 229, } // Мужские
+            {169, 224, 263}, // Р–РµРЅСЃРєРёРµ
+            {49, 58, 119, 180, 185, 229, } // РњСѓР¶СЃРєРёРµ
         }
 };
 
@@ -88,7 +88,7 @@ stock PlayerGotoSkinSelect(playerid) {
     SetPlayerSkin(playerid, player_info[playerid][p_Skin]);
 
     pTextDrawSelectAge[playerid][P_SKIN_SELECT_TEXT_AGE] = 
-    CreatePlayerTextDraw            (playerid, 120.0, 260.0, !"ВОЗРАСТ_18"); // пусто
+    CreatePlayerTextDraw            (playerid, 120.0, 260.0, !"Р’РћР—Р РђРЎРў_18"); // РїСѓСЃС‚Рѕ
     PlayerTextDrawLetterSize        (playerid, pTextDrawSelectAge[playerid][P_SKIN_SELECT_TEXT_AGE], 0.2, 1.0);
     PlayerTextDrawColor             (playerid, pTextDrawSelectAge[playerid][P_SKIN_SELECT_TEXT_AGE], -1);
     PlayerTextDrawFont              (playerid, pTextDrawSelectAge[playerid][P_SKIN_SELECT_TEXT_AGE], 1);
@@ -96,7 +96,7 @@ stock PlayerGotoSkinSelect(playerid) {
     PlayerTextDrawShow 			    (playerid, pTextDrawSelectAge[playerid][P_SKIN_SELECT_TEXT_AGE]);
 
     pTextDrawSelectAge[playerid][P_SKIN_SELECT_TEXT_STYLE_CHAT] = 
-    CreatePlayerTextDraw            (playerid, 111.0, 277.0, !"ЖЕСТИКУЛЯЦИЯ_1"); // пусто
+    CreatePlayerTextDraw            (playerid, 111.0, 277.0, !"Р–Р•РЎРўРРљРЈР›РЇР¦РРЇ_1"); // РїСѓСЃС‚Рѕ
     PlayerTextDrawLetterSize        (playerid, pTextDrawSelectAge[playerid][P_SKIN_SELECT_TEXT_STYLE_CHAT], 0.2, 1.0);
     PlayerTextDrawColor             (playerid, pTextDrawSelectAge[playerid][P_SKIN_SELECT_TEXT_STYLE_CHAT], -1);
     PlayerTextDrawFont              (playerid, pTextDrawSelectAge[playerid][P_SKIN_SELECT_TEXT_STYLE_CHAT], 1);
@@ -345,7 +345,7 @@ stock ChCreate_PlayerClickTextDraw(playerid, Text:clickedid) {
         new str[18];
         format(
             str, sizeof(str),
-            "ЖЕСТИКУЛЯЦИЯ_%d",
+            "Р–Р•РЎРўРРљРЈР›РЇР¦РРЇ_%d",
             player_info[playerid][p_StyleChat] + 1
         );
 
@@ -372,7 +372,7 @@ stock ChCreate_PlayerClickTextDraw(playerid, Text:clickedid) {
         new str[18];
         format(
             str, sizeof(str),
-            "ВОЗРАСТ_%d",
+            "Р’РћР—Р РђРЎРў_%d",
             player_info[playerid][p_Age]
         );
 
@@ -439,19 +439,19 @@ stock ChCreate_PlayerClickPTextDraw(playerid, PlayerText:playertextid) {
 
 dialog Registration_PlayerSkinSelect(playerid) {
     Create:<" "> {
-        MessageBox:<"\n\n"#C_W"Вы действительно хотите выбрать данную {abcdef}одежду"#C_W"?\n\n"> {
+        MessageBox:<"\n\n"#C_W"Р’С‹ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ С…РѕС‚РёС‚Рµ РІС‹Р±СЂР°С‚СЊ РґР°РЅРЅСѓСЋ {abcdef}РѕРґРµР¶РґСѓ"#C_W"?\n\n"> {
             ResponseRight: {
                 return DIALOG_CLOSE;
             }
 
-            Create:<""#C_B"Регистрация | "#C_W"Создание персонажа"> {
+            Create:<""#C_B"Р РµРіРёСЃС‚СЂР°С†РёСЏ | "#C_W"РЎРѕР·РґР°РЅРёРµ РїРµСЂСЃРѕРЅР°Р¶Р°"> {
                 ResponseRight: {
                     return DIALOG_BACK;
                 }
 
                 Input:<"\
-                    "#C_W"Введите имя вашего персонажа:\n\n\
-                    "#C_G"Формат: Name_Surname\
+                    "#C_W"Р’РІРµРґРёС‚Рµ РёРјСЏ РІР°С€РµРіРѕ РїРµСЂСЃРѕРЅР°Р¶Р°:\n\n\
+                    "#C_G"Р¤РѕСЂРјР°С‚: Name_Surname\
                 "> {
 
                     new name[MAX_PLAYER_NAME + 1];
@@ -479,14 +479,14 @@ dialog Registration_PlayerSkinSelect(playerid) {
                     DialogQuery:<dbHandle, query>;
                     if(cache_num_rows()) {
                         PlayerClearChat(playerid);
-                        SendErrorMessage(playerid, "Данное имя персонажа занято!");
+                        SendErrorMessage(playerid, "Р”Р°РЅРЅРѕРµ РёРјСЏ РїРµСЂСЃРѕРЅР°Р¶Р° Р·Р°РЅСЏС‚Рѕ!");
                         Dialog_CacheDestroy(playerid, deepid);
                         return DialogGoto:<deepid>;
                     }
 
                     if(!textlen(name, 6, MAX_PLAYER_NAME)) {
                         PlayerClearChat(playerid);
-                        SendErrorMessage(playerid, "Введите имя в формате: Name_Surname. Длина от 6 до 24-х символов");
+                        SendErrorMessage(playerid, "Р’РІРµРґРёС‚Рµ РёРјСЏ РІ С„РѕСЂРјР°С‚Рµ: Name_Surname. Р”Р»РёРЅР° РѕС‚ 6 РґРѕ 24-С… СЃРёРјРІРѕР»РѕРІ");
                         Dialog_CacheDestroy(playerid, deepid);
                         return DialogGoto:<deepid>;
                     }
@@ -524,7 +524,7 @@ dialog Registration_PlayerSkinSelect(playerid) {
                         PlayerClearChat(playerid);
                         Regex_Delete(NAME_CHECK);
 
-                        SendErrorMessage(playerid, "Введите имя в формате: Name_Surname");
+                        SendErrorMessage(playerid, "Р’РІРµРґРёС‚Рµ РёРјСЏ РІ С„РѕСЂРјР°С‚Рµ: Name_Surname");
                         
                         Dialog_CacheDestroy(playerid, deepid);
 						return DialogGoto:<deepid>;
@@ -532,10 +532,10 @@ dialog Registration_PlayerSkinSelect(playerid) {
                     Regex_Delete(NAME_CHECK);
                 }
             }
-            Button:<"Создать", "Назад">;
+            Button:<"РЎРѕР·РґР°С‚СЊ", "РќР°Р·Р°Рґ">;
         }
     }
-    Button:<"Выбрать", "X">;
+    Button:<"Р’С‹Р±СЂР°С‚СЊ", "X">;
 }
 
 stock CreateInteriorSelectSkin(playerid) {

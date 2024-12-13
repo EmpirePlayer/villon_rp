@@ -5,7 +5,7 @@ stock Server_Time_GameModeInit() {
 }
 
 public: OnServerSecondUpdate() {
-    if(++gServerTimer == 60) { // 1 минута
+    if(++gServerTimer == 60) { // 1 РјРёРЅСѓС‚Р°
         gServerTimer = 0;
     }
 

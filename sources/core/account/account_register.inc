@@ -6,7 +6,7 @@ stock OnPlayerRegister(playerid) {
     new str[66 + MAX_PLAYER_NAME];
     format(
         str, sizeof(str),
-        "Добро пожаловать, %s. Надеемся, что вы хорошо проведете время у нас!",
+        "Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ, %s. РќР°РґРµРµРјСЃСЏ, С‡С‚Рѕ РІС‹ С…РѕСЂРѕС€Рѕ РїСЂРѕРІРµРґРµС‚Рµ РІСЂРµРјСЏ Сѓ РЅР°СЃ!",
         account_info[playerid][account_Login]
     );
     SendClientMessage(playerid, 0xF5DEB3FF, str);
@@ -15,30 +15,30 @@ stock OnPlayerRegister(playerid) {
 }
 
 dialog Registration(playerid) {
-    Create:<""#C_B"Регистрация | "#C_W"Ввод пароля"> {
+    Create:<""#C_B"Р РµРіРёСЃС‚СЂР°С†РёСЏ | "#C_W"Р’РІРѕРґ РїР°СЂРѕР»СЏ"> {
         ResponseRight: {
             PlayerClearChat(playerid);
             Kick(playerid);
 
-            SendClientMessage(playerid, 0xF5DEB3FF, !"До встречи, мы надеемся увидеть вас вновь на нашем сервере");
+            SendClientMessage(playerid, 0xF5DEB3FF, !"Р”Рѕ РІСЃС‚СЂРµС‡Рё, РјС‹ РЅР°РґРµРµРјСЃСЏ СѓРІРёРґРµС‚СЊ РІР°СЃ РІРЅРѕРІСЊ РЅР° РЅР°С€РµРј СЃРµСЂРІРµСЂРµ");
             return DIALOG_CLOSE;
         }
 
         Input:<"\
-            "#C_W"Прежде чем начать игру, Вы должны пройти\n\
-            регистрацию. Она включает в себя\n\
-            следующие этапы\n\n\
-            \t"#C_LIGHTGRAY"1. Пароль\n\
-            \t"#C_DIMGRAY"2. Инвайт-код\n\n\
-            "#C_W"Придумайте и введите уникальный пароль\n\
-            не используемый на остальных проектах\
+            "#C_W"РџСЂРµР¶РґРµ С‡РµРј РЅР°С‡Р°С‚СЊ РёРіСЂСѓ, Р’С‹ РґРѕР»Р¶РЅС‹ РїСЂРѕР№С‚Рё\n\
+            СЂРµРіРёСЃС‚СЂР°С†РёСЋ. РћРЅР° РІРєР»СЋС‡Р°РµС‚ РІ СЃРµР±СЏ\n\
+            СЃР»РµРґСѓСЋС‰РёРµ СЌС‚Р°РїС‹\n\n\
+            \t"#C_LIGHTGRAY"1. РџР°СЂРѕР»СЊ\n\
+            \t"#C_DIMGRAY"2. РРЅРІР°Р№С‚-РєРѕРґ\n\n\
+            "#C_W"РџСЂРёРґСѓРјР°Р№С‚Рµ Рё РІРІРµРґРёС‚Рµ СѓРЅРёРєР°Р»СЊРЅС‹Р№ РїР°СЂРѕР»СЊ\n\
+            РЅРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Р№ РЅР° РѕСЃС‚Р°Р»СЊРЅС‹С… РїСЂРѕРµРєС‚Р°С…\
         "> {
             new password[MAX_PASSWORD_LENGHT + 1];
             Dialog_Text(playerid, password);
 
             if(!textlen(password, MIN_PASSWORD_LENGHT, MAX_PASSWORD_LENGHT)) {
                 PlayerClearChat(playerid);
-                SendErrorMessage(playerid, "Длина пароля должна быть от "#MIN_PASSWORD_LENGHT" до "#MAX_PASSWORD_LENGHT" символов");
+                SendErrorMessage(playerid, "Р”Р»РёРЅР° РїР°СЂРѕР»СЏ РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РѕС‚ "#MIN_PASSWORD_LENGHT" РґРѕ "#MAX_PASSWORD_LENGHT" СЃРёРјРІРѕР»РѕРІ");
                 return DIALOG_REOPEN;
             }
 
@@ -50,20 +50,20 @@ dialog Registration(playerid) {
                 account_info[playerid][account_Salt][10] = 0;
                 SHA256_PassHash(password, account_info[playerid][account_Salt], account_info[playerid][account_Password], MAX_SALT_PASSWORD_LENGHT);
 
-                Create:<""#C_B"Регистрация | "#C_W"Инвайт-код"> {
+                Create:<""#C_B"Р РµРіРёСЃС‚СЂР°С†РёСЏ | "#C_W"РРЅРІР°Р№С‚-РєРѕРґ"> {
                     ResponseRight: {
                         return DIALOG_BACK;
                     }
 
                     Input:<"\
-                        "#C_W"Прежде чем начать игру, Вы должны пройти\n\
-                        регистрацию. Она включает в себя\n\
-                        следующие этапы\n\n\
-                        \t"#C_DIMGRAY"1. Пароль\n\
-                        \t"#C_LIGHTGRAY"2. Инвайт-код\n\n\
-                        "#C_W"Введите инвайт-код друга вы получите \n\
-                        на 3 уровне деньги. Если его нет, можете\n\
-                        оставить поле пустым\
+                        "#C_W"РџСЂРµР¶РґРµ С‡РµРј РЅР°С‡Р°С‚СЊ РёРіСЂСѓ, Р’С‹ РґРѕР»Р¶РЅС‹ РїСЂРѕР№С‚Рё\n\
+                        СЂРµРіРёСЃС‚СЂР°С†РёСЋ. РћРЅР° РІРєР»СЋС‡Р°РµС‚ РІ СЃРµР±СЏ\n\
+                        СЃР»РµРґСѓСЋС‰РёРµ СЌС‚Р°РїС‹\n\n\
+                        \t"#C_DIMGRAY"1. РџР°СЂРѕР»СЊ\n\
+                        \t"#C_LIGHTGRAY"2. РРЅРІР°Р№С‚-РєРѕРґ\n\n\
+                        "#C_W"Р’РІРµРґРёС‚Рµ РёРЅРІР°Р№С‚-РєРѕРґ РґСЂСѓРіР° РІС‹ РїРѕР»СѓС‡РёС‚Рµ \n\
+                        РЅР° 3 СѓСЂРѕРІРЅРµ РґРµРЅСЊРіРё. Р•СЃР»Рё РµРіРѕ РЅРµС‚, РјРѕР¶РµС‚Рµ\n\
+                        РѕСЃС‚Р°РІРёС‚СЊ РїРѕР»Рµ РїСѓСЃС‚С‹Рј\
                     "> {
                         new invite_code[MAX_INVITE_CODE_LENGHT + 1];
                         Dialog_Text(playerid, invite_code);
@@ -93,7 +93,7 @@ dialog Registration(playerid) {
 
                             if(!cache_num_rows()) {
                                 PlayerClearChat(playerid);
-                                SendErrorMessage(playerid, "Данный инвайт-код не найден");
+                                SendErrorMessage(playerid, "Р”Р°РЅРЅС‹Р№ РёРЅРІР°Р№С‚-РєРѕРґ РЅРµ РЅР°Р№РґРµРЅ");
                                 Dialog_CacheDestroy(playerid, deepid);
                                 return DialogGoto:<deepid>;
                             }
@@ -101,13 +101,13 @@ dialog Registration(playerid) {
                             strmid(account_info[playerid][account_InviteCode], invite_code, 0, MAX_INVITE_CODE_LENGHT, MAX_INVITE_CODE_LENGHT);
                         }
 
-                        Create:<""#C_B"Регистрация | "#C_W"Завершение"> {
+                        Create:<""#C_B"Р РµРіРёСЃС‚СЂР°С†РёСЏ | "#C_W"Р—Р°РІРµСЂС€РµРЅРёРµ"> {
                             static const 
-                                fmt_str[] = ""#C_W"Регистрация завершена. Ниже представлены указанные данные:\n\n\
-                                \t"#C_LIGHTGRAY"Логин: "#C_W"%s\n\
-                                \t"#C_LIGHTGRAY"Пароль: "#C_W"%s\n\
-                                \t"C_LIGHTGRAY"Инвайт-Код: "#C_W"%s\n\n\
-                                Сделайте {DABA3A}скришнот "#C_W" при помощи {DABA3A}F8 "#C_W"и перейдите к следующему меню";
+                                fmt_str[] = ""#C_W"Р РµРіРёСЃС‚СЂР°С†РёСЏ Р·Р°РІРµСЂС€РµРЅР°. РќРёР¶Рµ РїСЂРµРґСЃС‚Р°РІР»РµРЅС‹ СѓРєР°Р·Р°РЅРЅС‹Рµ РґР°РЅРЅС‹Рµ:\n\n\
+                                \t"#C_LIGHTGRAY"Р›РѕРіРёРЅ: "#C_W"%s\n\
+                                \t"#C_LIGHTGRAY"РџР°СЂРѕР»СЊ: "#C_W"%s\n\
+                                \t"C_LIGHTGRAY"РРЅРІР°Р№С‚-РљРѕРґ: "#C_W"%s\n\n\
+                                РЎРґРµР»Р°Р№С‚Рµ {DABA3A}СЃРєСЂРёС€РЅРѕС‚ "#C_W" РїСЂРё РїРѕРјРѕС‰Рё {DABA3A}F8 "#C_W"Рё РїРµСЂРµР№РґРёС‚Рµ Рє СЃР»РµРґСѓСЋС‰РµРјСѓ РјРµРЅСЋ";
 
                             new str[sizeof(fmt_str) + (-2 + MAX_PLAYER_NAME + 1) + (-2 + MAX_PASSWORD_LENGHT + 1) + (-2 + MAX_INVITE_CODE_LENGHT + 1)];
                             format(
@@ -115,28 +115,28 @@ dialog Registration(playerid) {
                                 fmt_str, 
                                 account_info[playerid][account_Login], 
                                 password, 
-                                (isnull(invite_code)) ? ("Не указан") : (invite_code)
+                                (isnull(invite_code)) ? ("РќРµ СѓРєР°Р·Р°РЅ") : (invite_code)
                             );
 
                             MessageBox:<str> {
                                 PlayerGotoSkinSelect(playerid);
                             }
-                            Button:<"Завершить">;
+                            Button:<"Р—Р°РІРµСЂС€РёС‚СЊ">;
                         }
                     }
-                    Button:<"Далее", "Назад">;
+                    Button:<"Р”Р°Р»РµРµ", "РќР°Р·Р°Рґ">;
                 }
             } else {
                 PlayerClearChat(playerid);
                 Regex_Delete(PASSWORD_CHECK_VALID);
 
-                SendErrorMessage(playerid, "Пароль может состоять только из Английских букв и цифр");
+                SendErrorMessage(playerid, "РџР°СЂРѕР»СЊ РјРѕР¶РµС‚ СЃРѕСЃС‚РѕСЏС‚СЊ С‚РѕР»СЊРєРѕ РёР· РђРЅРіР»РёР№СЃРєРёС… Р±СѓРєРІ Рё С†РёС„СЂ");
                 return DIALOG_REOPEN;
             }
             Regex_Delete(PASSWORD_CHECK_VALID);
         }
     }
-    Button:<"Далее", "X">;
+    Button:<"Р”Р°Р»РµРµ", "X">;
 }
 
 stock CreateNewAccount(playerid) {
@@ -202,8 +202,8 @@ public: LoadingPlayerRegistration(playerid) {
     cache_get_row_count(rows);
 
     if(!rows) {
-        printf(">> !! ОШИБКА РЕГИСТРАЦИИ АККАУНТА: АККАУНТ %s НЕ НАЙДЕН! [MYSQL_ERROR_REGISTRATION_PLAYER]", account_info[playerid][account_Login]);
-        SendErrorMessage(playerid, "Произошла ошибка [MYSQL_ERROR_REGISTRATION_PLAYER]. Напишите проблему в технический раздел на форуме, приложив данную ошибку");
+        printf(">> !! РћРЁРР‘РљРђ Р Р•Р“РРЎРўР РђР¦РР РђРљРљРђРЈРќРўРђ: РђРљРљРђРЈРќРў %s РќР• РќРђР™Р”Р•Рќ! [MYSQL_ERROR_REGISTRATION_PLAYER]", account_info[playerid][account_Login]);
+        SendErrorMessage(playerid, "РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР° [MYSQL_ERROR_REGISTRATION_PLAYER]. РќР°РїРёС€РёС‚Рµ РїСЂРѕР±Р»РµРјСѓ РІ С‚РµС…РЅРёС‡РµСЃРєРёР№ СЂР°Р·РґРµР» РЅР° С„РѕСЂСѓРјРµ, РїСЂРёР»РѕР¶РёРІ РґР°РЅРЅСѓСЋ РѕС€РёР±РєСѓ");
         Kick(playerid);
         return 1;
     }
@@ -211,7 +211,7 @@ public: LoadingPlayerRegistration(playerid) {
     cache_get_value_name_int(0, "ID", account_info[playerid][account_ID]);
 
     #if DEBUG_MODE
-        printf("ACCOUNT_REGISTER %d: >> Зарегистрирован новый логин %s [regip: %s, lastip: %s, invite_code: %s], Персонаж %s [skin: %d, money: %d]",
+        printf("ACCOUNT_REGISTER %d: >> Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅ РЅРѕРІС‹Р№ Р»РѕРіРёРЅ %s [regip: %s, lastip: %s, invite_code: %s], РџРµСЂСЃРѕРЅР°Р¶ %s [skin: %d, money: %d]",
             account_info[playerid][account_ID],
             account_info[playerid][account_Login],
             account_info[playerid][account_RegIP],
@@ -290,11 +290,11 @@ stock AccountReg_BackgroundUpdate(playerid, status) {
             new str[50 + MAX_PLAYER_NAME];
             format(
                 str, sizeof(str),
-                "Ваш персонаж "#C_GREEN"%s "#C_W"успешно создан",
+                "Р’Р°С€ РїРµСЂСЃРѕРЅР°Р¶ "#C_GREEN"%s "#C_W"СѓСЃРїРµС€РЅРѕ СЃРѕР·РґР°РЅ",
                 player_info[playerid][p_Name]
             );
             SendClientMessage(playerid, COLOR_WHITE, str);
         }
-        SendClientMessage(playerid, COLOR_WHITE, !"Чтобы начать игру нажмите "#C_G"НАЧАТЬ ИГРУ");
+        SendClientMessage(playerid, COLOR_WHITE, !"Р§С‚РѕР±С‹ РЅР°С‡Р°С‚СЊ РёРіСЂСѓ РЅР°Р¶РјРёС‚Рµ "#C_G"РќРђР§РђРўР¬ РР“Р РЈ");
     }
 }

@@ -61,7 +61,7 @@ stock Account_Spawn(playerid) {
 
     if(!IsPlayerConnected(playerid) || !IsPlayerLogged(playerid)) {
         Kick(playerid);
-        return SendErrorMessage(playerid, "Необходимо авторизироваться");
+        return SendErrorMessage(playerid, "РќРµРѕР±С…РѕРґРёРјРѕ Р°РІС‚РѕСЂРёР·РёСЂРѕРІР°С‚СЊСЃСЏ");
     }
 
     PlayerSettingsSpawn(playerid);
@@ -73,7 +73,7 @@ public: ACCOUNT_MYSQL_CHECK_ONLINE(playerid) {
     cache_get_row_count(rows);
 
     if(rows) {
-        SendErrorMessage(playerid, "Данный логин находится онлайн на сервере");
+        SendErrorMessage(playerid, "Р”Р°РЅРЅС‹Р№ Р»РѕРіРёРЅ РЅР°С…РѕРґРёС‚СЃСЏ РѕРЅР»Р°Р№РЅ РЅР° СЃРµСЂРІРµСЂРµ");
         Kick(playerid);
         return 1;
     }
@@ -119,7 +119,7 @@ public: ACCOUNT_MYSQL_CHECK(playerid) {
 
 stock PlayerTimerAccountLogin(playerid) {
     if(GetPVarInt(playerid, pVar__Timer_Login) <= gettime() && GetPVarInt(playerid, pVar__Timer_Login) != 0) {
-        SendErrorMessage(playerid, "Вы были кикнуты за долгую регистрацию/авторизацию");
+        SendErrorMessage(playerid, "Р’С‹ Р±С‹Р»Рё РєРёРєРЅСѓС‚С‹ Р·Р° РґРѕР»РіСѓСЋ СЂРµРіРёСЃС‚СЂР°С†РёСЋ/Р°РІС‚РѕСЂРёР·Р°С†РёСЋ");
         DeletePVar(playerid, pVar__Timer_Login);
 
         Kick(playerid);
@@ -159,8 +159,8 @@ public: OnPlayerLoadingAccount(playerid) {
     cache_get_row_count(rows);
 
     if(!rows) {
-        printf(">> !! ОШИБКА ЗАГРУЗКИ АККАУНТА: АККАУНТ %s НЕ НАЙДЕН! [MYSQL_ERROR_LOADING_ACCOUNT]", account_info[playerid][account_Login]);
-        SendErrorMessage(playerid, "Произошла ошибка [MYSQL_ERROR_LOADING_ACCOUNT]. Напишите проблему в технический раздел на форуме, приложив данную ошибку");
+        printf(">> !! РћРЁРР‘РљРђ Р—РђР“Р РЈР—РљР РђРљРљРђРЈРќРўРђ: РђРљРљРђРЈРќРў %s РќР• РќРђР™Р”Р•Рќ! [MYSQL_ERROR_LOADING_ACCOUNT]", account_info[playerid][account_Login]);
+        SendErrorMessage(playerid, "РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР° [MYSQL_ERROR_LOADING_ACCOUNT]. РќР°РїРёС€РёС‚Рµ РїСЂРѕР±Р»РµРјСѓ РІ С‚РµС…РЅРёС‡РµСЃРєРёР№ СЂР°Р·РґРµР» РЅР° С„РѕСЂСѓРјРµ, РїСЂРёР»РѕР¶РёРІ РґР°РЅРЅСѓСЋ РѕС€РёР±РєСѓ");
         Kick(playerid);
         return 1;
     }
@@ -178,7 +178,7 @@ public: OnPlayerLoadingAccount(playerid) {
     cache_get_value_name(0, !"LastdateUnix", temp_date, sizeof(temp_date));
     format(
         str, sizeof(str),
-        "Последний раз вы заходили на сервер: %s",
+        "РџРѕСЃР»РµРґРЅРёР№ СЂР°Р· РІС‹ Р·Р°С…РѕРґРёР»Рё РЅР° СЃРµСЂРІРµСЂ: %s",
         temp_date
     );
     SendClientMessage(playerid, COLOR_LGR, str);

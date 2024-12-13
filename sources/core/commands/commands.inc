@@ -21,13 +21,13 @@ public OnPlayerCommandReceived(playerid, cmd[], params[], flags) {
 
     if(temp_info[playerid][tCommandSucces]) {
         if(PlayerAntiFlood(playerid)) {
-            SendClientMessage(playerid, COLOR_GREY, !"Подождите немного...");
+            SendClientMessage(playerid, COLOR_GREY, !"РџРѕРґРѕР¶РґРёС‚Рµ РЅРµРјРЅРѕРіРѕ...");
             return 0;
         }
     }
 
     if(Dialog_IsRender(playerid)) {
-        SendClientMessage(playerid, COLOR_GREY, !"Нельзя использовать команды, пока открыт диалог");
+        SendClientMessage(playerid, COLOR_GREY, !"РќРµР»СЊР·СЏ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РєРѕРјР°РЅРґС‹, РїРѕРєР° РѕС‚РєСЂС‹С‚ РґРёР°Р»РѕРі");
         return 0;
     }
     return 1;

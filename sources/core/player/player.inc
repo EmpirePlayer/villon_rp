@@ -16,17 +16,17 @@ stock PlayerSettingsSpawn(playerid) {
 }
 
 stock Player_OnPlayerConnect(playerid) {
-    SetPlayerColor(playerid, COLOR_GREY); 							/* Устанавливаем серый клист для игрока */
+    SetPlayerColor(playerid, COLOR_GREY); 							/* РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЃРµСЂС‹Р№ РєР»РёСЃС‚ РґР»СЏ РёРіСЂРѕРєР° */
 
-	ResetPlayerWeapons(playerid); 									/* Удаляем оружие */
-	SetPlayerArmedWeapon(playerid, 0); 								/* Делаем кулак основным */
-	StopAudioStreamForPlayer(playerid); 							/* Остановим аудио в скриме */
-	CancelSelectTextDraw(playerid); 								/* Убираем режим выбора TextDraw */
+	ResetPlayerWeapons(playerid); 									/* РЈРґР°Р»СЏРµРј РѕСЂСѓР¶РёРµ */
+	SetPlayerArmedWeapon(playerid, 0); 								/* Р”РµР»Р°РµРј РєСѓР»Р°Рє РѕСЃРЅРѕРІРЅС‹Рј */
+	StopAudioStreamForPlayer(playerid); 							/* РћСЃС‚Р°РЅРѕРІРёРј Р°СѓРґРёРѕ РІ СЃРєСЂРёРјРµ */
+	CancelSelectTextDraw(playerid); 								/* РЈР±РёСЂР°РµРј СЂРµР¶РёРј РІС‹Р±РѕСЂР° TextDraw */
 
     PlayerInformationClear(playerid);
 
     GetPlayerIp(playerid, account_info[playerid][account_IP], MAX_IP_LENGHT);
-    GetPlayerName(playerid, account_info[playerid][account_Login], MAX_PLAYER_NAME);	    /* Узнаем Ник у игрока и запишем для Логина */
+    GetPlayerName(playerid, account_info[playerid][account_Login], MAX_PLAYER_NAME);	    /* РЈР·РЅР°РµРј РќРёРє Сѓ РёРіСЂРѕРєР° Рё Р·Р°РїРёС€РµРј РґР»СЏ Р›РѕРіРёРЅР° */
 
 	PreloadAnimLibs(playerid);
 }
