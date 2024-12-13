@@ -16,4 +16,11 @@
 
 </details>
 
-- [X] Авторизация
+<details><summary>Авторизация</summary>
+  
+- [X] Ввод пароля
+- [X] Выбор персонажа на TextDraw (пока что, только один персонаж, и выбран он по умолчанию)
+
+<img src="https://github.com/EmpirePlayer/villon_rp/blob/main/img/GIF_REGI.gif" alt="РЕГИСТРАЦИЯ">
+
+</details>
