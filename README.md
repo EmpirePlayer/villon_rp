@@ -1,11 +1,12 @@
 <h1 align="center">
   <img src="https://github.com/EmpirePlayer/villon_rp/blob/main/img/VILLON_LOGO.png">
 </h1>
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=VILLON+ROLE+PLAY" alt="Typing SVG" /></a>
 
 [![Link to Mastodon profile](https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge)](https://github.com/EmpirePlayer/villon_rp)
-[![Link to Mastodon profile](https://img.shields.io/badge/Language-Pawn-red?style=for-the-badge)](https://github.com/EmpirePlayer/villon_rp)
-[![Link to Mastodon profile](https://img.shields.io/badge/Saves-MySQL-purple?style=for-the-badge)](https://github.com/EmpirePlayer/villon_rp)
+[![Link to Mastodon profile](https://img.shields.io/badge/Language-Pawn-blue?style=for-the-badge)](https://github.com/EmpirePlayer/villon_rp)
+[![Link to Mastodon profile](https://img.shields.io/badge/Saves-MySQL-blue?style=for-the-badge)](https://github.com/EmpirePlayer/villon_rp)
+
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=VILLON+ROLE+PLAY" alt="Typing SVG" /></a>
 
 Основна для мода. Написан полностью с нуля для общего пользования.
 
