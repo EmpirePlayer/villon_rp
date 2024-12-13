@@ -11,7 +11,7 @@
 - [X] Создание пароля
 - [X] Создание персонажа на TextDraw
 
-<img src="путь к файлу" alt="альтернативный текст">
+<img src="https://github.com/EmpirePlayer/villon_rp/blob/main/GIF_REGI.gif" alt="РЕГИСТРАЦИЯ">
 
 </details>
 
