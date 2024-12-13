@@ -34,3 +34,11 @@
 >>> mysql_connect - Здесь можно настроить подключение к базе данных
 
 </details>
+
+<details><summary>Настройка Сервера</summary>
+  
+>sources
+>> core
+>>> constans - Здесь можно настроить название сервера, сайт, и.т.д
+
+</details>
