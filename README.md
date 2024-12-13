@@ -24,3 +24,5 @@
 <img src="https://github.com/EmpirePlayer/villon_rp/blob/main/img/GIF_AUTH.gif" alt="РЕГИСТРАЦИЯ">
 
 </details>
+
+# Техническая часть
